@@ -1,3 +1,8 @@
+Das fertige Beispiel findet ihr hier: [https://github.com/elmarburke/micro-status](https://github.com/elmarburke/micro-status)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
