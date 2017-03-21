@@ -1,13 +1,22 @@
 import React from 'react'
 import Content from '../../components/Content'
 import Status from './components/Status'
+import Compose from './components/Compose'
 
 class Home extends React.Component {
+  handleSubmit = (value) => {
+    window.alert(value)
+  }
+
   render () {
     return (
       <div>
         <Content>
           <h1>MICRO STATUS</h1>
+        </Content>
+
+        <Content>
+          <Compose onSubmit={this.handleSubmit} />
         </Content>
 
         <Content>
