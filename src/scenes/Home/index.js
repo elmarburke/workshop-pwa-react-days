@@ -2,13 +2,22 @@ import React from 'react'
 import Content from '../../components/Content'
 import Status from './components/Status'
 import Compose from './components/Compose'
+import { connect } from 'react-redux'
+import { fetchList } from '../../data/status/actions'
+import { getAllStatus } from '../../data/status/reducer'
 
 class Home extends React.Component {
   handleSubmit = (value) => {
     window.alert(value)
   }
 
+  componentDidMount () {
+    this.props.fetchList()
+  }
+
   render () {
+    const { status } = this.props
+
     return (
       <div>
         <Content>
@@ -20,11 +29,17 @@ class Home extends React.Component {
         </Content>
 
         <Content>
-          <Status status={{ text: 'Hallo Welt', time: '2017-03-12T11:28:04' }} />
+          {status.map( (statusItem) => <Status status={statusItem} key={statusItem._id} /> )}
         </Content>
       </div>
     )
   }
 }
 
-export default Home
+const mapStateToProps = (state) => ({
+  status: getAllStatus(state)
+})
+
+export default connect(mapStateToProps, {
+  fetchList
+})(Home)
