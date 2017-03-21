@@ -5,6 +5,8 @@
   "dependencies": {
     "moment": "^2.18.0",
     "normalizr": "^3.2.2",
+    "pouchdb": "^6.1.2",
+    "pouchdb-server": "^2.3.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -17,7 +19,7 @@
     "react-scripts": "0.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start | pouchdb-server",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
